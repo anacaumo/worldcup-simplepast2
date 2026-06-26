@@ -309,7 +309,7 @@ let allQuestions = [
   options: [
     { text: "Porque aparece a palavra 'coach'.", score: 0, type: "Wrong", explanation: "'Coach' significa treinador. Não indica tempo." },
 
-    { text: "Porque o verbo está em 'changed'.", score: 1, type: "Correct", explanation: "Correto! 'Changed' está no Simple Past." },
+    { text: "Porque aparece a palavra 'changed'.", score: 1, type: "Correct", explanation: "Correto! 'Changed' está no Simple Past." },
 
     { text: "Porque aparece a palavra 'plan'.", score: 0, type: "Wrong", explanation: "'Plan' significa plano. Não indica tempo." },
 
