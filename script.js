@@ -129,7 +129,7 @@ let allQuestions = [
 
     { text: "stop", score: 0, type: "Wrong", explanation: "'Stop' está no presente." },
 
-    { text: "stoping", score: 0, type: "Wrong", explanation: "'Stoping' não está no Simple Past. A resposta correta era 'stopped'." }
+    { text: "stopping", score: 0, type: "Wrong", explanation: "'Stoping' não está no Simple Past. A resposta correta era 'stopped'." }
   ]
 },
 
