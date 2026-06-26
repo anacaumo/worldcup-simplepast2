@@ -1,0 +1,466 @@
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #f4f1ff;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.game-box {
+  max-width: 705px;
+  margin: 0 auto;
+  width: 100%;
+  background: white;
+  border: 4px solid #8c7ae6;
+  padding: 20px;
+  box-shadow: 6px 6px 0px #8c7ae6;
+}
+
+@media (max-width: 600px) {
+  .game-box {
+    max-width: 95%;
+  }
+}
+
+h1 {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 25px; /* more breathing room */
+}
+
+#levelLabel {
+  margin-top: 10px;
+  font-size: 10px;
+}
+
+#score {
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background: #dcd6ff;
+  border: 3px solid #6c5ce7;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+button:hover {
+  background: #c8c1ff;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hidden {
+  display: none;
+}
+
+.dialogue-box {
+  border: 3px solid #6c5ce7;
+  padding: 12px;
+  margin: 15px 0;
+  background: #fdfcff;
+}
+
+#situation {
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.option {
+  font-size: 10px;
+}
+
+#feedbackBox {
+  margin-top: 15px;
+  padding: 10px;
+  border: 2px dashed #aaa;
+  min-height: 60px;
+}
+
+#feedback {
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+.restart-btn {
+  margin-top: 5px;
+  background: #ffe0e0;
+  border: 3px solid #ff8a8a;
+}
+
+.restart-btn:hover {
+  background-color: #fabbbd;
+}
+
+#feedback {
+  font-size: 9px;
+  line-height: 1.4;
+  color: #666;
+}
+
+#setup {
+  margin-top: 20px;
+}
+
+#teamNames input {
+  padding: 8px;
+  font-family: inherit;
+}
+
+#currentTeam {
+  margin: 8px 0;
+  font-size: 12px;
+}
+
+#setup {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#setup h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#setup label {
+  font-size: 12px;
+}
+
+#teamNames {
+  margin-top: 15px;
+}
+
+.team-input {
+  display: block;
+  margin: 8px auto;
+  padding: 8px;
+  font-family: inherit;
+  text-align: center;
+  width: 200px;
+}
+
+#setup button {
+  margin-top: 15px;
+}
+
+/* SCOREBOARD */
+#scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+/* TEAM BOX */
+.team-box {
+  border: 2px solid #ccc;
+  padding: 6px;
+  min-width: 70px;
+  text-align: center;
+  background-color: #f5f5f5;
+  transition: 0.15s;
+  max-width: 90px;
+}
+
+/* TEAM NAME */
+.team-name {
+  font-size: 10px; /* smaller */
+  margin-bottom: 3px;
+  word-break: break-word; /* handles long names */
+}
+
+/* TEAM SCORE */
+.team-score {
+  font-size: 14px; /* smaller */
+  font-weight: bold;
+}
+
+/* ACTIVE TEAM */
+.active-team {
+  border: 2px solid #8c7ae6;
+  transform: scale(1.03);
+}
+
+/* ROUND DISPLAY */
+
+#roundDisplay {
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+
+/* THEME TRANSITIONS */
+body, .game-box, .dialogue-box, .option, #nextBtn, .team-box {
+  transition: 
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.1s ease;
+}
+
+/* THEME SLIGHT ANIMATION */
+
+.theme-flash {
+  animation: flash 0.25s ease;
+}
+
+@keyframes flash {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* BUTTON ANIMATIONS */
+
+button:active {
+  transform: scale(0.95);
+}
+
+.option:active {
+  transform: scale(0.96);
+}
+
+button {
+  transition: transform 0.1s ease;
+}
+
+/* TEAM TURN PULSE EFFECT */
+
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.active-team {
+  animation: pulse 1.2s infinite;
+}
+
+/* MARK SELECTED ANSWER VISUALLY WHILE GIVING FEEDBACK */
+
+.option.selected {
+  outline: 3px solid #333;
+  transform: scale(0.95);
+  filter: brightness(0.9);
+}
+
+/* CLICK FOR FEEDBACK AFTER ANSWERING*/
+
+#feedback.clickable:hover {
+  opacity: 0.8;
+}
+
+/* I JUST DON'T WANT IT TO BREAK TEAM NAMES */
+
+.team-box {
+  white-space: nowrap;
+}
+
+.team-box {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.team-score {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.team-box:hover {
+  overflow: visible;
+  white-space: normal;
+  background: white;
+  z-index: 10;
+}
+
+
+/* RANKING PAGE */
+
+/* RANKING SCREEN */
+
+.rank-card {
+  margin: 20px auto;
+  padding: 20px;
+  border: 3px solid #8c7ae6;
+  background: #f4f1ff;
+  width: 60%;
+  text-align: center;
+  font-size: 18px;
+  box-shadow: 4px 4px 0px #8c7ae6;
+  position: relative;
+  overflow: hidden;
+}
+
+.rank-emoji {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.rank-name {
+  font-size: 20px;
+  word-break: break-word; /* prevents cutting */
+}
+
+/* reveal animation */
+.reveal {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* WINNER EFFECT */
+.winner {
+  margin-top: 10px;
+  font-size: 22px;
+  animation: pulseWinner 1s infinite;
+}
+
+@keyframes pulseWinner {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* WINNER CONFETTI */
+
+/* CENTER TITLE */
+#ranking h2 {
+  text-align: center;
+  font-size: 14px; /* same scale as game */
+  margin-bottom: 15px;
+}
+
+/* RANK CARD SMALLER */
+.rank-card {
+  margin: 10px auto;
+  padding: 12px;
+  width: 80%;
+  font-size: 12px;
+}
+
+/* NAME */
+.rank-name {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* SCORE */
+.rank-score {
+  font-size: 10px;
+  margin-top: 5px;
+  color: #555;
+}
+
+/* EMOJI / POSITION */
+.rank-emoji {
+  font-size: 12px;
+}
+
+/* CONFETTI */
+.confetti {
+  position: fixed;
+  top: -10px;
+  width: 6px;
+  height: 6px;
+  background: red;
+  animation: fall linear forwards;
+}
+
+.confetti:nth-child(2n) { background: blue; }
+.confetti:nth-child(3n) { background: yellow; }
+.confetti:nth-child(4n) { background: green; }
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+/* REVEAL WINNER BUTTON */
+
+#revealBtn {
+  display: block;
+  margin: 20px auto;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#revealBtn:hover {
+  background: #c8c1ff;
+}
+
+/* SPARKLES FOR WINNERS */
+
+/* ✨ medal shimmer */
+
+.rank-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+  transform: skewX(-20deg);
+}
+
+/* only shimmer medals (with different speeds) */
+
+.rank-card.gold::after {
+  animation: shine 2s infinite;
+}
+
+.rank-card.silver::after {
+  animation: shine 3s infinite;
+}
+
+.rank-card.bronze::after {
+  animation: shine 4s infinite;
+}
+
+
+/* 🎯 medal shadows */
+
+.rank-card.gold {
+  box-shadow: 4px 4px 0px #e1b700;
+}
+
+.rank-card.silver {
+  box-shadow: 4px 4px 0px #bbb;
+}
+
+.rank-card.bronze {
+  box-shadow: 4px 4px 0px #a05a2c;
+}
+
+
+
+@keyframes shine {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+

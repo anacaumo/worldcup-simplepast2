@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pragmatics Quest</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="game-box">
+
+  <h1>Pragmatics Quest</h1>
+
+  <!-- SETUP SCREEN -->
+  <div id="setup">
+    <h2>Set up your teams</h2>
+
+    <label>Number of teams:</label>
+    <select id="teamCount" onchange="generateNameInputs(); updateRoundOptions();">
+      <option value="2">2 Teams</option>
+      <option value="3" selected>3 Teams</option>
+      <option value="4">4 Teams</option>
+      <option value="5">5 Teams</option>
+    </select>
+
+    <div id="teamNames"></div>
+
+    <br><br>
+
+    <label>Number of rounds:</label>
+    <select id="roundCount"></select>
+
+    <button onclick="startGame()">Start Game</button>
+  </div>
+
+  <!-- GAME -->
+  <div id="game" style="display:none;">
+    <div id="scoreboard"></div>
+
+    <p id="roundDisplay"></p>
+
+    <div class="dialogue-box">
+      <p id="situation"></p>
+    </div>
+
+    <div id="options"></div>
+
+    <div id="feedbackBox">
+      <p id="feedback"></p>
+    </div>
+
+    <button id="nextBtn" onclick="nextRound()">Next</button>
+    <button class="restart-btn" onclick="restartGame()">Restart Game</button>
+  </div>
+
+  <!-- ✅ RANKING (OUTSIDE GAME) -->
+  <div id="ranking" style="display:none;">
+    <div id="rankingList"></div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
