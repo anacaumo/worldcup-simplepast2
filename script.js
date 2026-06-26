@@ -95,225 +95,228 @@ currentRound = 1;
 
 let allQuestions = [
   {
-  text: "Your friend returned your hoodie with a stain. What do you say?",
+  text: "Qual destas frases está escrita corretamente no simple past?",
   options: [
-    { text: "What did you do to my hoodie?!", score: 0, type: "too direct", explanation: "Direct accusation ('you') with no softener or question. Sounds aggressive." },
+    { text: "The players studyed the opponents.", score: 0, type: "Wrong", explanation: "'Study' termina em consoante + y. O correto é 'studied'." },
 
-    { text: "Hey, I think there’s a stain here—do you know what happened?", score: 1, type: "appropriate", explanation: "Uses softener ('I think') + indirect question. reduces blame and keeps it friendly." },
+    { text: "The players studied the opponents.", score: 1, type: "Correct", explanation: "Correto! 'Study' vira 'studied' no Simple Past." },
 
-    { text: "There’s a stain on this.", score: 0.5, type: "acceptable", explanation: "Clear statement, but no softener or question. More direct." },
+    { text: "The players studyd the opponents.", score: 0, type: "Wrong", explanation: "Falta trocar o 'y' por 'i'. O correto é 'studied'." },
 
-    { text: "It's fine.", score: 0, type: "too indirect", explanation: "Avoids the issue completely. Lacks request or clarification." }
+    { text: "The players studying the opponents.", score: 0, type: "Wrong", explanation: "'Studying' não está no Simple Past. A resposta correta era 'studied'." }
+  ]
+},
+
+ {
+  text: "Complete a frase no simple past: 'The coach ________ the plan.'",
+  options: [
+    { text: "changed", score: 1, type: "Correct", explanation: "Correto! Como 'change' já termina em 'e', acrescentamos apenas '-d'." },
+
+    { text: "changeed", score: 0, type: "Wrong", explanation: "Não adicionamos '-ed' completo quando o verbo já termina em 'e'. O correto é 'changed'." },
+
+    { text: "changged", score: 0, type: "Wrong", explanation: "Está sobrando letras. O correto é 'changed'." },
+
+    { text: "change", score: 0, type: "Wrong", explanation: "'Change' está no presente. A resposta correta era 'changed'." }
+  ]
+},
+
+ {
+  text: "Qual destas palavras foi escrita corretamente no Simple Past?",
+  options: [
+    { text: "stoped", score: 0, type: "Wrong", explanation: "Em 'stop' dobramos a última consoante. O correto é 'stopped'." },
+
+    { text: "stopped", score: 1, type: "Correct", explanation: "Correto! 'Stop' segue a regra de dobrar a última consoante antes de acrescentar '-ed'." },
+
+    { text: "stop", score: 0, type: "Wrong", explanation: "'Stop' está no presente." },
+
+    { text: "stoping", score: 0, type: "Wrong", explanation: "'Stoping' não está no Simple Past. A resposta correta era 'stopped'." }
+  ]
+},
+
+ {
+  text: "Observe a frase: 'The fans cried after the final.' O verbo 'cried' significa:",
+  options: [
+    { text: "tentaram", score: 0, type: "Wrong", explanation: "'Tried' significa tentaram. A resposta correta era 'choraram'." },
+
+    { text: "comemoraram", score: 0, type: "Wrong", explanation: "'Celebrated' significa comemoraram. A resposta correta era 'choraram'." },
+
+    { text: "choraram", score: 1, type: "Correct", explanation: "Correto! 'Cried' é o passado do verbo 'cry'." },
+
+    { text: "gritaram", score: 0, type: "Wrong", explanation: "'Cried' significa choraram. A resposta correta era 'choraram'." }
   ]
 },
 
   {
-  text: "You are late to meet your friend. What do you say?",
+  text: "Qual destas frases está INCORRETA?",
   options: [
-    { text: "I'm late.", score: 0, type: "too blunt", explanation: "States the problem, but no apology or repair strategy." },
+    { text: "The referee stopped the game.", score: 0, type: "Wrong", explanation: "Essa frase está correta." },
 
-    { text: "Sorry I'm late! I'll be there in 10 minutes.", score: 1, type: "appropriate", explanation: "Uses apology ('sorry') + repair (time info). Socially appropriate." },
+    { text: "The goalkeeper dropped the ball.", score: 0, type: "Wrong", explanation: "Essa frase está correta." },
 
-    { text: "Hey, I’m running a bit late.", score: 0.5, type: "acceptable", explanation: "Uses softener ('a bit'), but lacks full repair (no timing or solution)." },
+    { text: "The coach planned the training.", score: 0, type: "Wrong", explanation: "Essa frase está correta." },
 
-    { text: "Relax.", score: 0, type: "dismissive", explanation: "Dismisses the other person’s perspective. No apology or responsibility." }
+    { text: "The players win the match yesterday.", score: 1, type: "Correct", explanation: "Isso! O correto seria 'won'." }
   ]
 },
 
   {
-  text: "You want extra time for an assignment. What do you say?",
+  text: "Qual destes verbos é IRREGULAR?",
   options: [
-    { text: "Give me more time.", score: 0, type: "too direct", explanation: "Direct command. Lacks modal or softener." },
+    { text: "changed", score: 0, type: "Wrong", explanation: "'Changed' é um verbo regular." },
 
-    { text: "Could I possibly have an extra day to finish this?", score: 1, type: "appropriate", explanation: "Uses modal ('could') + softener ('possibly'). Polite and indirect request." },
+    { text: "planned", score: 0, type: "Wrong", explanation: "'Planned' é um verbo regular." },
 
-    { text: "Is it okay if I turn it in late?", score: 0.5, type: "acceptable", explanation: "Polite question, but lacks additional mitigation (no softener or justification)." },
+    { text: "took", score: 1, type: "Correct", explanation: "Correto! 'Took' é o passado irregular do verbo 'take'." },
 
-    { text: "I didn’t do it.", score: 0, type: "avoidance", explanation: "States problem, but no request or solution." }
+    { text: "believed", score: 0, type: "Wrong", explanation: "'Believed' é um verbo regular." }
   ]
 },
 
   {
-  text: "You think your teacher graded you unfairly. What do you say?",
+  text: "Observe a frase: 'The coach believed in the team.' O verbo 'believed' significa:",
   options: [
-    { text: "This grade is wrong.", score: 0, type: "too direct", explanation: "Direct statement with no softener. Threatens face." },
+    { text: "mudou", score: 0, type: "Wrong", explanation: "'Changed' significa mudou. A resposta correta era 'acreditou'." },
 
-    { text: "I was wondering if we could review my grade together.", score: 1, type: "appropriate", explanation: "Uses intro phrase ('I was wondering if') + collaborative tone. Reduces imposition." },
+    { text: "acreditou", score: 1, type: "Correct", explanation: "Correto! 'Believed' é o passado do verbo 'believe' e significa 'acreditou'." },
 
-    { text: "I think there might be a mistake.", score: 0.5, type: "acceptable", explanation: "Uses softeners ('I think', 'might'), but lacks collaboration." },
+    { text: "planejou", score: 0, type: "Wrong", explanation: "'Planned' significa planejou. A resposta correta era 'acreditou'." },
 
-    { text: "You made a mistake.", score: 0, type: "accusatory", explanation: "Direct accusation ('you'). Confrontational." }
+    { text: "venceu", score: 0, type: "Wrong", explanation: "'Won' significa venceu. A resposta correta era 'acreditou'." }
+  ]
+},
+
+  
+  {
+  text: "Complete a frase no simple past: 'The players ________ water during the break.'",
+  options: [
+    { text: "drinked", score: 0, type: "Wrong", explanation: "'Drink' é um verbo irregular. O correto é 'drank'." },
+
+    { text: "drank", score: 1, type: "Correct", explanation: "Correto! 'Drank' é o Simple Past do verbo 'drink'." },
+
+    { text: "drinks", score: 0, type: "Wrong", explanation: "'Drinks' está no presente. A resposta correta era 'drank'." },
+
+    { text: "drinking", score: 0, type: "Wrong", explanation: "'Drinking' indica uma ação em andamento. A resposta correta era 'drank'." }
+  ]
+},
+
+{
+  text: "Qual destas frases usa corretamente o verbo 'SAY' no simple past?",
+  options: [
+    { text: "The referee say the goal wasn't valid.", score: 0, type: "Wrong", explanation: "O correto seria 'said'." },
+
+    { text: "The referee said the goal wasn't valid.", score: 1, type: "Correct", explanation: "Correto! 'Said' é o passado do verbo 'say'." },
+
+    { text: "The referee sayed the goal wasn't valid.", score: 0, type: "Wrong", explanation: "'Sayed' não existe. O correto é 'said'." },
+
+    { text: "The referee sayd the goal wasn't valid.", score: 0, type: "Wrong", explanation: "'Sayd' não existe. O correto é 'said'." }
+  ]
+},
+
+ {
+  text: "Observe a frase: 'The children enjoyed the game.' Qual palavra é um verbo no Simple Past?",
+  options: [
+    { text: "children", score: 0, type: "Wrong", explanation: "'Children' significa crianças. Não é o verbo." },
+
+    { text: "game", score: 0, type: "Wrong", explanation: "'Game' significa jogo. Não está no Simple Past." },
+
+    { text: "enjoyed", score: 1, type: "Correct", explanation: "Correto! 'Enjoyed' é o verbo no Simple Past." },
+
+    { text: "the", score: 0, type: "Wrong", explanation: "'The' é apenas um artigo. A resposta correta era 'enjoyed'." }
+  ]
+},
+
+ {
+  text: "Qual destas palavras completa corretamente a frase no simple past? 'Vini Jr. ________ the ball from the defender.'",
+  options: [
+    { text: "taked", score: 0, type: "Wrong", explanation: "'Take' é irregular. O correto é 'took'." },
+
+    { text: "took", score: 1, type: "Correct", explanation: "Correto! 'Took' é o passado do verbo 'take'." },
+
+    { text: "takes", score: 0, type: "Wrong", explanation: "'Takes' está no presente." },
+
+    { text: "taking", score: 0, type: "Wrong", explanation: "'Taking' indica uma ação em andamento." }
+  ]
+},
+
+  
+{
+  text: "Observe a frase: 'The referee said the goal wasn't valid.' O verbo 'said' significa:",
+  options: [
+    { text: "parou", score: 0, type: "Wrong", explanation: "'Stopped' significa parou." },
+
+    { text: "mudou", score: 0, type: "Wrong", explanation: "'Changed' significa mudou." },
+
+    { text: "disse", score: 1, type: "Correct", explanation: "Correto! 'Said' é o passado do verbo 'say'." },
+
+    { text: "venceu", score: 0, type: "Wrong", explanation: "'Won' significa venceu." }
+  ]
+},
+  
+{
+  text: "Qual destas palavras foi escrita corretamente no simple past?",
+  options: [
+    { text: "cryed", score: 0, type: "Wrong", explanation: "'Cry' termina em consoante + y. O correto é 'cried'." },
+
+    { text: "cried", score: 1, type: "Correct", explanation: "Correto! 'Cry' vira 'cried' no Simple Past." },
+
+    { text: "cryd", score: 0, type: "Wrong", explanation: "Está faltando a letra 'i'." },
+
+    { text: "cry", score: 0, type: "Wrong", explanation: "'Crying' não está no Simple Past." }
   ]
 },
 
   {
-  text: "A server brought you the wrong drink. What do you say?",
+  text: "Complete a frase no simple past: 'The reporter ________ a question.'",
   options: [
-    { text: "This is wrong.", score: 0, type: "too direct", explanation: "Blunt statement. Lacks softener or request." },
+    { text: "asked", score: 1, type: "Correct", explanation: "Correto! 'Asked' é o Simple Past do verbo 'ask'." },
 
-    { text: "Excuse me, I think I ordered a Sprite.", score: 1, type: "appropriate", explanation: "Uses softener ('I think') + indirect correction. Polite." },
+    { text: "askd", score: 0, type: "Wrong", explanation: "Está faltando a letra 'e'. O correto é 'asked'." },
 
-    { text: "I asked for something else.", score: 0.5, type: "acceptable", explanation: "Clear, but lacks softener. Direct and blunt." },
+    { text: "askked", score: 0, type: "Wrong", explanation: "'Askked' não existe. A resposta correta era 'asked'." },
 
-    { text: "Whatever.", score: 0, type: "dismissive", explanation: "Dismissive response. No communication strategy." }
+    { text: "ask", score: 0, type: "Wrong", explanation: "'Asking' indica uma ação em andamento. A resposta correta era 'asked'." }
   ]
 },
 
   {
-  text: "You didn’t understand the homework. What do you say?",
+  text: "Qual destas palavras significa 'adversários'?",
   options: [
-    { text: "I don't get it.", score: 0, type: "too blunt", explanation: "Direct statement. No modal or softener." },
+    { text: "children", score: 0, type: "Wrong", explanation: "'Children' significa crianças." },
 
-    { text: "Could you explain it again, please?", score: 1, type: "appropriate", explanation: "Uses modal ('could') + 'please'. Polite request." },
+    { text: "opponents", score: 1, type: "Correct", explanation: "Correto! 'Opponents' significa adversários." },
 
-    { text: "I’m not sure I understood. Could you go over it again?", score: 1, type: "appropriate", explanation: "Takes responsibility + uses modal ('could'). Strong face-saving strategy." },
+    { text: "reporters", score: 0, type: "Wrong", explanation: "'Reporters' significa repórteres." },
 
-    { text: "This makes no sense.", score: 0, type: "negative", explanation: "Critical statement. Threatens listener’s face." }
+    { text: "defenders", score: 0, type: "Wrong", explanation: "'Defenders' significa zagueiros." }
   ]
 },
 
   {
-  text: "It is 11:30 PM and your neighbor is playing loud music. What do you say?",
+  text: "Na frase 'The players tried their best.', qual palavra está no Simple Past?",
   options: [
-    { text: "Turn that music down right now!", score: 0, type: "too direct", explanation: "Direct command. No softener or modal." },
+    { text: "players", score: 0, type: "Wrong", explanation: "'Players' significa jogadores." },
 
-    { text: "Sorry to bother you, but it’s quite loud and I have an exam tomorrow. Would it be possible to lower it?", score: 1, type: "appropriate", explanation: "Uses apology + softener ('quite') + modal ('would it be possible'). Very polite." },
+    { text: "best", score: 0, type: "Wrong", explanation: "'Best' significa melhor." },
 
-    { text: "It’s really loud.", score: 0.5, type: "acceptable", explanation: "States problem, but no request or softener." },
+    { text: "tried", score: 1, type: "Correct", explanation: "Correto! 'Tried' é o verbo no Simple Past." },
 
-    { text: "You’re being inconsiderate.", score: 0, type: "too harsh", explanation: "Judgment ('you'). Escalates conflict." }
+    { text: "their", score: 0, type: "Wrong", explanation: "'Their' significa deles. Não é o verbo." }
   ]
 },
 
   {
-  text: "You are at a restaurant and your fork is dirty. What do you say?",
+  text: "Observe a frase: 'The coach changed the plan.' Como sabemos que ela está falando do passado?",
   options: [
-    { text: "This is dirty. Bring me another one.", score: 0, type: "too direct", explanation: "Blunt statement + command. No softener or modal." },
+    { text: "Porque aparece a palavra 'coach'.", score: 0, type: "Wrong", explanation: "'Coach' significa treinador. Não indica tempo." },
 
-    { text: "Excuse me, there seems to be a slight problem with this fork. Could I get another one?", score: 1, type: "appropriate", explanation: "Uses 'there seems to be' + 'slight' + modal ('could'). Highly mitigated request." },
+    { text: "Porque o verbo está em 'changed'.", score: 1, type: "Correct", explanation: "Correto! 'Changed' está no Simple Past." },
 
-    { text: "I think this isn’t clean. Could I have another one?", score: 0.5, type: "appropriate", explanation: "Uses softener ('I think') + modal ('could')." },
+    { text: "Porque aparece a palavra 'plan'.", score: 0, type: "Wrong", explanation: "'Plan' significa plano. Não indica tempo." },
 
-    { text: "Um… this fork…", score: 0, type: "too indirect", explanation: "Too vague. No clear request." }
+    { text: "Porque aparece a palavra 'the'.", score: 0, type: "Wrong", explanation: "'The' é apenas um artigo." }
   ]
 },
 
-  {
-  text: "Your friend is 30 minutes late and hasn’t texted you. What do you say?",
-  options: [
-    { text: "You’re always late. It’s so annoying.", score: 0, type: "too harsh", explanation: "Uses 'always' + direct criticism. Escalates conflict." },
-
-    { text: "Hey, I’ve been waiting for a bit—is everything okay?", score: 1, type: "appropriate", explanation: "Uses softener ('a bit') + indirect concern. Polite and non-accusatory." },
-
-    { text: "You’re late.", score: 0.5, type: "acceptable", explanation: "Clear, but no softener or question. More direct." },
-
-    { text: "Whatever.", score: 0, type: "dismissive", explanation: "Avoids communication." }
-  ]
-},
-
-  {
-  text: "You want your teacher to check one of your answers. What do you say?",
-  options: [
-    { text: "Check this.", score: 0, type: "too direct", explanation: "Command. No modal or softener." },
-
-    { text: "I was wondering if you could double-check this answer for me?", score: 1, type: "appropriate", explanation: "Uses intro phrase + modal ('could'). Very polite request." },
-
-    { text: "Can you check this?", score: 0.5, type: "acceptable", explanation: "Uses modal ('can'), but less formal/softened." },
-
-    { text: "This is wrong, right?", score: 0, type: "problematic", explanation: "Pushes the teacher. Sounds leading or insecure." }
-  ]
-},
-
-  {
-  text: "Your food arrives, but it is cold. What do you say?",
-  options: [
-    { text: "This is cold. Take it back.", score: 0, type: "too direct", explanation: "Blunt statement + command. No softening." },
-
-    { text: "Actually, I think this is a little cold. Could I get a new one?", score: 1, type: "appropriate", explanation: "Uses softener ('I think', 'a little') + modal ('could')." },
-
-    { text: "This is kind of cold.", score: 0.5, type: "acceptable", explanation: "Uses softener ('kind of'), but no request." },
-
-    { text: "Never mind.", score: 0, type: "avoidance", explanation: "Avoids the issue. No communication." }
-  ]
-},
-
-  {
-  text: "A classmate keeps interrupting you while you're speaking. What do you say?",
-  options: [
-    { text: "Stop interrupting me.", score: 0, type: "too direct", explanation: "Direct command. No softener." },
-
-    { text: "Hey, could I finish what I was saying?", score: 1, type: "appropriate", explanation: "Uses modal ('could'). Assertive but not rude." },
-
-    { text: "Let me talk.", score: 0.5, type: "acceptable", explanation: "Clear, but no softener. Very direct." },
-
-    { text: "You never listen.", score: 0, type: "too harsh", explanation: "Uses 'never'. Overgeneralization and criticism." }
-  ]
-},
-
-  {
-  text: "The classroom is very cold. What do you say to your teacher?",
-  options: [
-    { text: "It's cold. Turn on the heat.", score: 0, type: "too direct", explanation: "Command. No mitigation." },
-
-    { text: "I'm sorry, but the room is a bit cold. Could we turn on the heat?", score: 1, type: "appropriate", explanation: "Uses softener ('a bit') + modal ('could') + apology." },
-
-    { text: "It's kind of cold.", score: 0.5, type: "acceptable", explanation: "Uses softener, but no request." },
-
-    { text: "This room is freezing.", score: 0, type: "too strong", explanation: "Exaggeration + no request." }
-  ]
-}, 
-
-  {
-  text: "A classmate in your group is not contributing. What do you say?",
-  options: [
-    { text: "You’re not doing anything.", score: 0, type: "too direct", explanation: "Direct accusation. Confrontational." },
-
-    { text: "Hey, could we divide the work a bit differently so everyone has a part?", score: 1, type: "appropriate", explanation: "Uses modal ('could') + softener ('a bit'). Indirect and collaborative." },
-
-    { text: "We need more help.", score: 0.5, type: "acceptable", explanation: "Indirect, but not very specific." },
-
-    { text: "You never help.", score: 0, type: "too harsh", explanation: "Uses 'never'. Overgeneralization." }
-  ]
-}, 
-
-  {
-  text: "Your friend is talking loudly during a movie. What do you say?",
-  options: [
-    { text: "Be quiet.", score: 0, type: "too direct", explanation: "Command. No softener." },
-
-    { text: "Hey, could you lower your voice a bit?", score: 1, type: "appropriate", explanation: "Uses modal ('could') + softener ('a bit')." },
-
-    { text: "You’re very loud.", score: 0.5, type: "acceptable", explanation: "Clear, but no softener or request." },
-
-    { text: "You’re ruining this.", score: 0, type: "too harsh", explanation: "Blames the person. Escalates." }
-  ]
-},
-
-  {
-  text: "You need to email your teacher because your assignment is late. What do you say?",
-  options: [
-    { text: "I'm submitting it late.", score: 0, type: "too blunt", explanation: "No apology or mitigation." },
-
-    { text: "I'm sorry for the delay. I was wondering if I could still submit the assignment.", score: 1, type: "appropriate", explanation: "Uses apology + intro phrase + modal. Very appropriate." },
-
-    { text: "Can I still send it?", score: 0.5, type: "acceptable", explanation: "Uses modal ('can'), but lacks apology and formality." },
-
-    { text: "This deadline was unfair.", score: 0, type: "confrontational", explanation: "Criticizes authority. Inappropriate tone." }
-  ]
-},
-
-  {
-  text: "You receive a bill that seems too high. What do you say?",
-  options: [
-    { text: "This is wrong.", score: 0, type: "too direct", explanation: "Blunt statement. No softener." },
-
-    { text: "Excuse me, I think there might be a mistake on the bill.", score: 1, type: "appropriate", explanation: "Uses softeners ('I think', 'might'). Polite correction." },
-
-    { text: "This seems high.", score: 0.5, type: "acceptable", explanation: "Uses softener ('seems'), but no clear request." },
-
-    { text: "You overcharged me.", score: 0, type: "accusatory", explanation: "Direct accusation. Confrontational." }
-  ]
-}
 ];
 
 
